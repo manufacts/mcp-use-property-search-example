@@ -12,7 +12,9 @@ paid service is involved.
 ## Live demo
 
 [Open the chat demo](https://inspector.manufact.com/inspector?embedded=true&autoConnect=https%3A%2F%2Fmanufact-property-search-example.run.mcp-use.com%2Fmcp&embeddedConfig=%7B%22singleTab%22%3Atrue%2C%22defaultTab%22%3A%22chat%22%2C%22visibleTabs%22%3A%5B%22chat%22%5D%7D)
-and ask for homes in San Francisco.
+and ask for homes in San Francisco. Select **Fullscreen** to see the listing
+cards. The demo chat uses Manufact's managed model, which cannot call view
+tools, so run the example locally to try follow-up refinements.
 
 MCP endpoint: https://manufact-property-search-example.run.mcp-use.com/mcp
 
@@ -27,8 +29,10 @@ npm ci
 npm run dev
 ```
 
-Open the Inspector URL printed by the CLI, select **Chat**, and sign in with
-Manufact or configure a supported model provider. Try these prompts in order:
+Open the Inspector URL printed by the CLI, select **Chat**, and configure a
+model provider with your own API key. The Inspector forwards view tools to the
+model only in this mode; the managed Manufact model cannot call them. Try these
+prompts in order:
 
 1. "Show me homes in San Francisco."
 2. "Now search the Mission, under $2M."
