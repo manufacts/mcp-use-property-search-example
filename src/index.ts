@@ -804,8 +804,7 @@ const server = new MCPServer({
   version: "2.0.0",
   title: "HomeScout SF",
   legacy: "stateless",
-  description:
-    "Search a staged catalog of San Francisco homes on a live map.",
+  description: "Search a staged catalog of San Francisco homes on a live map.",
   basePath: "/mcp",
 });
 
