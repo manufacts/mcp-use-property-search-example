@@ -1,12 +1,13 @@
 # HomeScout SF: property search MCP App
 
 An `mcp-use` MCP App with a Zillow-style split view: San Francisco listing
-cards on one side and a live OpenStreetMap map with price pins on the other.
+cards on one side and a live map with price pins on the other.
 The model opens the view once with `search-homes`, then refines it in place
 through tools the view registers itself.
 
-All listings are fictional. Map tiles come from CARTO's free OpenStreetMap
-basemaps. No listing API, API key, or paid service is involved.
+All listings are fictional. Map tiles come from Esri's keyless Canvas basemaps
+(light or dark gray, following the host theme). No listing API, API key, or
+paid service is involved.
 
 ## Live demo
 
@@ -41,8 +42,8 @@ Click **Fullscreen** in the view to switch display modes.
 
 ## How it works
 
-`search-homes` returns a compact match summary for the model and ships the
-whole staged catalog to the view. After it renders, the view registers tools
+`search-homes` returns the matching listing IDs plus the whole staged catalog in
+`structuredContent`, so the view can filter any neighborhood locally. After it renders, the view registers tools
 with `useViewTool` that filter, select, and move the map locally.
 
 | Tool | Called by | Purpose |
@@ -65,7 +66,7 @@ Valley, SoMa, Mission District, Noe Valley, Potrero Hill, and Bernal Heights.
 
 - `src/index.ts`: the staged catalog, `search-homes`, and `get-listing-details`.
 - `views/property-search/view.tsx`: the view, its view tools, and model context.
-- `views/property-search/map.tsx`: the Leaflet map, pins, and camera controls.
+- `views/property-search/map.tsx`: the Leaflet map, Esri tiles, pins, and camera controls.
 - `views/property-search/cards.tsx`: result cards and the detail panel.
 
 ## Check and build
